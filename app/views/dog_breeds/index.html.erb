@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Dog Breed Image Fetcher</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_tag('/dog_breeds/fetch_image', method: 'post', id: 'breedForm') do %>
+        <div class="mb-3">
+          <%= label_tag :breed, "Breed", class: "form-label" %>
+          <%= text_field_tag :breed, nil, class: "form-control", id: "breedInput" %>
+        </div>
+        <%= submit_tag "Submit", class: "btn btn-primary", remote: true %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <div id="breedImage" style="max-inline-size: -webkit-fill-available;"></div>
+    </div>
+  </div>
+</div>
